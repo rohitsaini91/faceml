@@ -31,12 +31,13 @@ class HomeVC: UIViewController {
         
     }
     
-    @objc func addImage(){
-        uploadImage()
-    }
     
     
     //MARK:- clickToAddPicture
+    @objc func addImage(){
+        uploadImage()
+    }
+
    
     
     /*
@@ -57,8 +58,14 @@ class HomeVC: UIViewController {
 
 extension HomeVC{
     private func detectFaces(){
-        //Request
+        //removing previous cropbox from image if any
+        for subview in self.view.subviews {
+            if let subSubView = subview.viewWithTag(999) {
+                subSubView.removeFromSuperview()
+            }
+        }
         
+        //Request
         let request = VNDetectFaceRectanglesRequest{(req, err) in
             if let err = err{
                 print("request failed to detect faces: \(err)")
@@ -77,7 +84,9 @@ extension HomeVC{
                       
                       let width = self.view.frame.width * detectedFaceInfo.boundingBox.width
                     
+                      //Crop Box
                       let cropFaceBox = UIView()
+                      cropFaceBox.tag = 999
                       cropFaceBox.backgroundColor = .clear
                       cropFaceBox.layer.cornerRadius = 10
                       cropFaceBox.layer.borderWidth = 3
@@ -175,7 +184,6 @@ extension HomeVC: UIImagePickerControllerDelegate,UINavigationControllerDelegate
              return
          }
          tapLbl.isHidden = true
-        
         self.selectedImage = selectedImage?.fixOrientation()
          observeImageView.image = selectedImage
         let scaleHeight = view.frame.width / selectedImage!.size.width * selectedImage!.size.height
