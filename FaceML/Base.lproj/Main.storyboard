@@ -18,13 +18,21 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ypr-SF-hGp">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap on screen " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACG-kN-LZV">
+                                <rect key="frame" x="127.5" y="433" width="159" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Ypr-SF-hGp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="HOb-xA-JTb"/>
                             <constraint firstItem="Ypr-SF-hGp" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="LjP-om-kXr"/>
+                            <constraint firstItem="ACG-kN-LZV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="VHk-1Z-UxH"/>
                             <constraint firstItem="Ypr-SF-hGp" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="kyW-y0-Nuj"/>
                             <constraint firstItem="Ypr-SF-hGp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mKD-J8-xjl"/>
+                            <constraint firstItem="ACG-kN-LZV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uee-It-1il"/>
                             <constraint firstItem="Ypr-SF-hGp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yPI-FJ-6VA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ypr-SF-hGp" secondAttribute="trailing" id="zTV-3q-z4j"/>
                         </constraints>
@@ -34,6 +42,7 @@
                     <connections>
                         <outlet property="observeImageView" destination="Ypr-SF-hGp" id="V8o-aN-jQT"/>
                         <outlet property="observeImageViewHeightConstraint" destination="kyW-y0-Nuj" id="evD-FH-IQQ"/>
+                        <outlet property="tapLbl" destination="ACG-kN-LZV" id="xSj-oh-eKr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
