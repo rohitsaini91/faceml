@@ -16,30 +16,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ypr-SF-hGp">
-                                <rect key="frame" x="0.0" y="34" width="414" height="828"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Ypr-SF-hGp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="HOb-xA-JTb"/>
                             <constraint firstItem="Ypr-SF-hGp" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="LjP-om-kXr"/>
-                            <constraint firstItem="Ypr-SF-hGp" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.924107" id="kyW-y0-Nuj"/>
+                            <constraint firstItem="Ypr-SF-hGp" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="kyW-y0-Nuj"/>
                             <constraint firstItem="Ypr-SF-hGp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mKD-J8-xjl"/>
                             <constraint firstItem="Ypr-SF-hGp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yPI-FJ-6VA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ypr-SF-hGp" secondAttribute="trailing" id="zTV-3q-z4j"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="OjR-Vi-dyr">
-                        <barButtonItem key="rightBarButtonItem" image="person.icloud" catalog="system" id="ati-7C-Iek">
-                            <connections>
-                                <action selector="clickToAddPicture:" destination="BYZ-38-t0r" id="VaE-yd-DAx"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="OjR-Vi-dyr"/>
                     <connections>
                         <outlet property="observeImageView" destination="Ypr-SF-hGp" id="V8o-aN-jQT"/>
-                        <outlet property="observeImageViewHeightConstraint" destination="kyW-y0-Nuj" id="Kvu-3f-ET4"/>
+                        <outlet property="observeImageViewHeightConstraint" destination="kyW-y0-Nuj" id="evD-FH-IQQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -49,10 +43,9 @@
         <!--Navigation Controller-->
         <scene sceneID="1Nw-u5-Bas">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BxW-t3-Zsk" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="BxW-t3-Zsk" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2Dx-3m-cJH">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -65,7 +58,4 @@
             <point key="canvasLocation" x="137.68115942028987" y="100.44642857142857"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="person.icloud" catalog="system" width="64" height="44"/>
-    </resources>
 </document>

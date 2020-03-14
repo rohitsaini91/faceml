@@ -14,7 +14,7 @@ class HomeVC: UIViewController {
     //OUTLETS
     @IBOutlet weak var observeImageView: UIImageView!
     @IBOutlet weak var observeImageViewHeightConstraint: NSLayoutConstraint!
-    var selectedImage: UIImage?
+    var selectedImage: UIImage!
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
@@ -24,15 +24,18 @@ class HomeVC: UIViewController {
     
     //MARK:- configUI
     private func configUI(){
-        let scaleHeight = view.frame.width / observeImageView.frame.width * observeImageView.frame.height
-        observeImageViewHeightConstraint.constant = scaleHeight
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(addImage))
+        self.view.isUserInteractionEnabled = true
+        self.view.addGestureRecognizer(gesture)
+    }
+    
+    @objc func addImage(){
+        uploadImage()
     }
     
     
     //MARK:- clickToAddPicture
-    @IBAction func clickToAddPicture(_ sender: UIBarButtonItem) {
-        uploadImage()
-    }
+   
     
     /*
     // MARK: - Navigation
@@ -61,16 +64,19 @@ extension HomeVC{
                 print(face)
                 guard let detectedFaceInfo = face as? VNFaceObservation else{return}
                 //Calculating the cropFaceBox Dimension with respect to detectFaceInfo boundingBox
-                let scaleHeight = self.view.frame.width / self.observeImageView.frame.width * self.observeImageView.frame.height
+                let scaleHeight = self.view.frame.width / self.selectedImage!.size.width * self.selectedImage!.size.height
                 let height = scaleHeight * detectedFaceInfo.boundingBox.height
                 let x = self.view.frame.width * detectedFaceInfo.boundingBox.origin.x
-                let y = scaleHeight * (detectedFaceInfo.boundingBox.origin.y)
+                let remainingHeight = (self.view.frame.height - scaleHeight ) / 2
+                let y = scaleHeight *  (1 - detectedFaceInfo.boundingBox.origin.y) - height + remainingHeight
                 
                 let width = self.view.frame.width * detectedFaceInfo.boundingBox.width
                 
                 let cropFaceBox = UIView()
-                cropFaceBox.backgroundColor = .green
-                cropFaceBox.alpha = 0.3
+                cropFaceBox.backgroundColor = .clear
+                cropFaceBox.layer.cornerRadius = 10
+                cropFaceBox.layer.borderWidth = 3
+                cropFaceBox.layer.borderColor = UIColor.red.cgColor
                 cropFaceBox.frame = CGRect(x: x, y: y, width: width, height: height)
                 self.view.addSubview(cropFaceBox)
                 print(detectedFaceInfo.boundingBox)
@@ -166,7 +172,9 @@ extension HomeVC: UIImagePickerControllerDelegate,UINavigationControllerDelegate
          
          self.selectedImage = selectedImage
          observeImageView.image = selectedImage
-         detectFaces()
+        let scaleHeight = view.frame.width / selectedImage!.size.width * selectedImage!.size.height
+        observeImageViewHeightConstraint.constant = scaleHeight
+        detectFaces()
          
      }
 }
