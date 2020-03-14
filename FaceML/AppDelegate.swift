@@ -35,3 +35,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+
+// UIImage Extension
+extension UIImage {
+func fixOrientation() -> UIImage {
+    if self.imageOrientation == UIImage.Orientation.up {
+        return self
+    }
+    UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
+    let shortDimension = fminf(Float(self.size.width), Float(self.size.height))
+    self.draw(in: CGRect(x: 0, y: 0, width: CGFloat(shortDimension), height: CGFloat(self.size.height)))
+    if let normalizedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext() {
+        UIGraphicsEndImageContext()
+        return normalizedImage
+    } else {
+        return self
+    }
+}
+}
