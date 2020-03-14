@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		22E08A71241CA8E60012F94D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E08A70241CA8E60012F94D /* AppDelegate.swift */; };
 		22E08A73241CA8E60012F94D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E08A72241CA8E60012F94D /* SceneDelegate.swift */; };
-		22E08A75241CA8E60012F94D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E08A74241CA8E60012F94D /* ViewController.swift */; };
 		22E08A78241CA8E60012F94D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22E08A76241CA8E60012F94D /* Main.storyboard */; };
 		22E08A7A241CA8E80012F94D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22E08A79241CA8E80012F94D /* Assets.xcassets */; };
 		22E08A7D241CA8E80012F94D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22E08A7B241CA8E80012F94D /* LaunchScreen.storyboard */; };
 		22E08A88241CA8E80012F94D /* FaceMLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E08A87241CA8E80012F94D /* FaceMLTests.swift */; };
+		FA5B900C241CAEC60019A58F /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5B900B241CAEC60019A58F /* HomeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +30,6 @@
 		22E08A6D241CA8E60012F94D /* FaceML.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceML.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22E08A70241CA8E60012F94D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22E08A72241CA8E60012F94D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		22E08A74241CA8E60012F94D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		22E08A77241CA8E60012F94D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		22E08A79241CA8E80012F94D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22E08A7C241CA8E80012F94D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,6 +37,7 @@
 		22E08A83241CA8E80012F94D /* FaceMLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FaceMLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22E08A87241CA8E80012F94D /* FaceMLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceMLTests.swift; sourceTree = "<group>"; };
 		22E08A89241CA8E80012F94D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA5B900B241CAEC60019A58F /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +81,7 @@
 			children = (
 				22E08A70241CA8E60012F94D /* AppDelegate.swift */,
 				22E08A72241CA8E60012F94D /* SceneDelegate.swift */,
-				22E08A74241CA8E60012F94D /* ViewController.swift */,
+				FA5B900B241CAEC60019A58F /* HomeVC.swift */,
 				22E08A76241CA8E60012F94D /* Main.storyboard */,
 				22E08A79241CA8E80012F94D /* Assets.xcassets */,
 				22E08A7B241CA8E80012F94D /* LaunchScreen.storyboard */,
@@ -200,7 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22E08A75241CA8E60012F94D /* ViewController.swift in Sources */,
+				FA5B900C241CAEC60019A58F /* HomeVC.swift in Sources */,
 				22E08A71241CA8E60012F94D /* AppDelegate.swift in Sources */,
 				22E08A73241CA8E60012F94D /* SceneDelegate.swift in Sources */,
 			);
@@ -363,7 +363,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 79Q9WFF2X8;
+				DEVELOPMENT_TEAM = 6Q233F3ZPX;
 				INFOPLIST_FILE = FaceML/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -381,7 +381,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 79Q9WFF2X8;
+				DEVELOPMENT_TEAM = 6Q233F3ZPX;
 				INFOPLIST_FILE = FaceML/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
