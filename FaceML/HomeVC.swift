@@ -13,6 +13,7 @@ class HomeVC: UIViewController {
     
     //OUTLETS
     @IBOutlet weak var observeImageView: UIImageView!
+    @IBOutlet weak var tapLbl: UILabel!
     @IBOutlet weak var observeImageViewHeightConstraint: NSLayoutConstraint!
     var selectedImage: UIImage!
     override func viewDidLoad() {
@@ -27,6 +28,7 @@ class HomeVC: UIViewController {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(addImage))
         self.view.isUserInteractionEnabled = true
         self.view.addGestureRecognizer(gesture)
+        
     }
     
     @objc func addImage(){
@@ -56,6 +58,7 @@ class HomeVC: UIViewController {
 extension HomeVC{
     private func detectFaces(){
         //Request
+        
         let request = VNDetectFaceRectanglesRequest{(req, err) in
             if let err = err{
                 print("request failed to detect faces: \(err)")
@@ -67,11 +70,13 @@ extension HomeVC{
                 let scaleHeight = self.view.frame.width / self.selectedImage!.size.width * self.selectedImage!.size.height
                 let height = scaleHeight * detectedFaceInfo.boundingBox.height
                 let x = self.view.frame.width * detectedFaceInfo.boundingBox.origin.x
+                
+                //remaining height
                 let remainingHeight = (self.view.frame.height - scaleHeight ) / 2
                 let y = scaleHeight *  (1 - detectedFaceInfo.boundingBox.origin.y) - height + remainingHeight
                 
                 let width = self.view.frame.width * detectedFaceInfo.boundingBox.width
-                
+              
                 let cropFaceBox = UIView()
                 cropFaceBox.backgroundColor = .clear
                 cropFaceBox.layer.cornerRadius = 10
@@ -79,7 +84,7 @@ extension HomeVC{
                 cropFaceBox.layer.borderColor = UIColor.red.cgColor
                 cropFaceBox.frame = CGRect(x: x, y: y, width: width, height: height)
                 self.view.addSubview(cropFaceBox)
-                print(detectedFaceInfo.boundingBox)
+                
             })
             
         }
@@ -169,12 +174,13 @@ extension HomeVC: UIImagePickerControllerDelegate,UINavigationControllerDelegate
          if selectedImage == nil {
              return
          }
-         
+         tapLbl.isHidden = true
+        
          self.selectedImage = selectedImage
          observeImageView.image = selectedImage
         let scaleHeight = view.frame.width / selectedImage!.size.width * selectedImage!.size.height
         observeImageViewHeightConstraint.constant = scaleHeight
-        detectFaces()
+            detectFaces()
          
      }
 }
